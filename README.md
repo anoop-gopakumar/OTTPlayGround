@@ -1,2 +1,2 @@
 # OTTPlayGround
-SampleFor MVVM WithClean Architecture
+Android sample project for MVVM with clean architecture
