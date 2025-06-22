@@ -1,4 +1,8 @@
 package com.example.myapplication.utils.programs
 
-class QickSort {
+class QuickSort : BaseSort {
+
+    override fun sort(input: IntArray) {
+        ///TODO sort this using quick sort...
+    }
 }

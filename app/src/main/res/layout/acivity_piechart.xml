@@ -10,9 +10,11 @@
         android:layout_height="match_parent"
         android:layout_marginTop="40dp"
         android:visibility="visible"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         custom:labelPosition="left"
+        custom:layout_editor_absoluteX="0dp"
         custom:showText="false" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

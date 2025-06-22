@@ -10,13 +10,11 @@ import com.example.myapplication.ui.dashboard.DashboardViewModel
 import com.example.myapplication.ui.dashboard.intent.LoginIntent
 import com.example.myapplication.ui.dashboard.viewmodel.LoginViewModel
 import com.example.myapplication.ui.main.MainActivity
-import com.example.myapplication.utils.ActLauncher
-import com.example.myapplication.utils.programs.BaseSort
+import com.example.myapplication.utils.ActivityLauncher
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>() {
 
-    lateinit var sort: BaseSort
-    lateinit var actLauncher: ActLauncher
+    lateinit var activityLauncher: ActivityLauncher
 
     override fun  getViewBinding(): ActivityLoginBinding {
         return ActivityLoginBinding.inflate(layoutInflater)
@@ -25,7 +23,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        actLauncher = ActLauncher()
+        activityLauncher = ActivityLauncher()
 
         loadLoginTemplate()
 
@@ -81,7 +79,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     }
 
     private fun moveToMain() {
-        actLauncher.launchAct(this@LoginActivity, MainActivity::class.java)
+        //actLauncher.launchAct(this@LoginActivity, HomeActivity::class.java)
+        activityLauncher.launchAct(this@LoginActivity, MainActivity::class.java)
     }
 
     private inline fun inlineFunc(callBack: (value: String) -> Any) {

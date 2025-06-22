@@ -18,6 +18,7 @@ abstract class BaseActivity<T> : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = getViewBinding()
         setContentView((binding as ViewBinding).root)
+
     }
 
 }

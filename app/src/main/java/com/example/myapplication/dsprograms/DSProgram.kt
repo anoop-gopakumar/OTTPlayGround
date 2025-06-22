@@ -1,3 +1,5 @@
+package com.example.myapplication.dsprograms
+
 fun main() {
     val inputArray = intArrayOf(40, 850, 1500, 10, 34, 1, 67, 0, 80)
     // secondLargest(inputArray, 0)

@@ -1,3 +1,5 @@
+package com.example.myapplication.dsprograms
+
 fun main() {
 
     RadixSort().apply {
@@ -8,12 +10,6 @@ fun main() {
             println(" $it ")
         }
     }
-
-//    CountSort().apply {
-//        println(" Counting sort")
-//        println( "Sorted list is")
-//    }
-
 }
 
 interface SortingTechnique {
@@ -21,20 +17,6 @@ interface SortingTechnique {
     fun sort(inputArray: IntArray): IntArray
 
 }
-
-//
-//class CountSort : SortingTechnique{
-//
-////    override fun sort(inputArray: IntArray): IntArray {
-////
-////
-////    }
-//
-//}
-
-
-
-
 
 class RadixSort : SortingTechnique {
 

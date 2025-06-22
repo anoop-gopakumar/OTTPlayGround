@@ -1,16 +1,22 @@
 package com.example.myapplication.ui.player
 
+import android.app.DownloadManager
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.annotation.OptIn
+import androidx.media3.common.C
 import androidx.media3.common.MediaItem
+import androidx.media3.common.MediaItem.DrmConfiguration
 import androidx.media3.common.MimeTypes
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
+import androidx.media3.common.Tracks
 import androidx.media3.common.util.UnstableApi
+import androidx.media3.database.ExoDatabaseProvider
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.analytics.AnalyticsListener
+import androidx.media3.exoplayer.drm.OfflineLicenseHelper
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityPlayerBinding
 import com.example.myapplication.ui.BaseActivity
@@ -31,12 +37,16 @@ class PlayerActivity : BaseActivity<ActivityPlayerBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       // setContentView(binding?.root)
         player = binding?.videoView?.player
     }
 
     override fun onStart() {
         super.onStart()
+
+
+
+       // androidx.media3.exoplayer.offline.DownloadManager()
+
         initializePlayer()
     }
 
@@ -44,20 +54,32 @@ class PlayerActivity : BaseActivity<ActivityPlayerBinding>() {
         player = ExoPlayer.Builder(this).build().also { exoPlayer ->
             binding?.videoView?.player = exoPlayer
             exoPlayer.trackSelectionParameters =
-                exoPlayer.trackSelectionParameters.buildUpon().setMaxVideoSizeSd().build()
+                exoPlayer.trackSelectionParameters.buildUpon().setPreferredAudioLanguages("").
+                setMaxVideoSizeSd().build()
+            
 
-            val mediaItem = MediaItem.Builder().setUri(resources.getString(R.string.media_url_dash))
+           val mediaItem : MediaItem = MediaItem.Builder().setUri(resources.getString(R.string.media_url_dash))
                 .setMimeType(MimeTypes.APPLICATION_MPD).build()
+
+
 
             exoPlayer.setMediaItems(listOf(mediaItem), mediaItemIndex, playbackPosition)
             exoPlayer.playWhenReady = playWhenReady
             exoPlayer.addListener(playbackStateLister)
             exoPlayer.prepare()
         }
+
+       val track : Tracks? =  player?.currentTracks
+        track?.groups?.get(0)?.getTrackFormat(0)
     }
 
     private fun playbackStateListener(): Player.Listener {
         val listener = object : Player.Listener {
+
+            override fun onTracksChanged(tracks: Tracks) {
+              //    val format =  tracks.groups[0].getTrackFormat(0)
+              //    format.language
+            }
 
             override fun onPlayerError(error: PlaybackException) {
                 Log.d("TAG", "onPlayerError ${error}")
@@ -71,7 +93,7 @@ class PlayerActivity : BaseActivity<ActivityPlayerBinding>() {
             override fun onPlaybackStateChanged(playbackState: Int) {
                 val stateString: String = when (playbackState) {
                     ExoPlayer.STATE_IDLE -> "IDLEe"
-                    ExoPlayer.STATE_BUFFERING -> "Buffering"
+                    ExoPlayer.STATE_BUFFERING -> ""
                     ExoPlayer.STATE_READY -> "Ready"
                     ExoPlayer.STATE_ENDED -> "Ended"
                     else -> "Unknown"

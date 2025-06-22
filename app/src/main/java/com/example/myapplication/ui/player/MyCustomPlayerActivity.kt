@@ -1,7 +1,6 @@
-package com.example.myapplication.ui.dashboard.viewmodel
+package com.example.myapplication.ui.player
 
 import android.os.Bundle
-import android.provider.ContactsContract.Data
 import android.util.Log
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
@@ -9,9 +8,7 @@ import androidx.media3.common.MediaItem.DrmConfiguration
 import androidx.media3.common.MimeTypes
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
-import androidx.media3.datasource.DataSourceException
 import androidx.media3.exoplayer.ExoPlayer
-import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityCustomPlayerBinding
 import com.example.myapplication.ui.BaseActivity

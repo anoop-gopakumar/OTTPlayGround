@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
+import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -14,6 +15,7 @@ import com.example.myapplication.R
 import com.example.myapplication.utils.programs.SecondLargest
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.ui.BaseActivity
+import com.example.myapplication.utils.Shape
 import com.example.myapplication.utils.programs.BubbleSort
 import com.example.myapplication.utils.programs.FindMostDuplicatedString
 
@@ -53,15 +55,33 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         val creator = ::sum
         val sum = creator(10, 30)
-        println(" Sum is "+ ::sum)
+        println(" Sum is " + ::sum)
+
+
+        var circle = Shape.Circle(20)
+        var square = Shape.Square(20)
+        var rectangle = Shape.Rectangle(20, 50)
+
+        checkShape(rectangle)
+
     }
 
-    fun sum(x: Int, y: Int) :Int {
-        return x+y
+    private fun checkShape(shape: Shape) {
+        val area: Int = when (shape) {
+            is Shape.Circle -> (shape.radius * 2 * 3.14).toInt()
+            is Shape.Square -> shape.side * shape.side
+            is Shape.Rectangle -> shape.length * shape.breadth
+            is Shape.Rect -> Int.MIN_VALUE
+        }
+
+        Log.d("TAG", "checkShape: area is ${area}")
     }
 
+    private fun sum(x: Int, y: Int): Int {
+        return x + y
+    }
 
-    private fun threadAndHandler(){
+    private fun threadAndHandler() {
         val h: Handler = object : Handler(Looper.getMainLooper()) {
             override fun handleMessage(msg: Message) {
                 if (msg.what == 0) {
@@ -72,7 +92,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             }
         }
 
-        val t = object : Thread() {
+            val t = object : Thread() {
             override fun run() {
                 // val success= doSomeWork()
                 h.sendEmptyMessage(0);
