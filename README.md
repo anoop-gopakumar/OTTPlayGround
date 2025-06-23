@@ -1,6 +1,6 @@
 # OTTPlayGround
 
-Android sample project for MVVM with clean architecture
+Android sample project for MVVM with clean architecture under implementation 
 
 1. MVVM - MVI - x
 2. Jetpack Compose - x
