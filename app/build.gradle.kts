@@ -1,16 +1,18 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.gms.google-services")
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "com.example.myapplication"
-    compileSdk = 34
+    namespace = "com.ott.ottapplication"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.myapplication"
+        applicationId = "com.ott.ottapplication"
         minSdk = 28
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -41,6 +43,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.0"
     }
+    buildToolsVersion = "35.0.0"
 }
 
 dependencies {
@@ -60,10 +63,19 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.compose)
 
-    implementation (libs.androidx.media3.exoplayer)
-    implementation (libs.androidx.media3.exoplayer.dash)
-    implementation (libs.androidx.media3.ui)
-    //implementation (libs.androidx.media3.ui.compose)
+
+
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.exoplayer.dash)
+    implementation(libs.androidx.media3.ui)
+
+
+    implementation(platform(libs.firebase.bom))
+
+    implementation(libs.firebase.auth.ui)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.core)
+    implementation(libs.facebook.sdk)
 
     testImplementation(libs.junit)
     testImplementation(libs.androidx.mockito)

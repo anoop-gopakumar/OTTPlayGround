@@ -1,7 +1,8 @@
 [versions]
-agp = "8.5.1"
-kotlin = "1.9.0"
-coreKtx = "1.10.1"
+agp = "8.10.1"
+firebaseBom = "33.15.0"
+kotlin = "2.0.0"
+coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
@@ -23,11 +24,15 @@ mockitoKotlinVersion="3.2.0"
 runner="1.6.1"
 exo_version="1.3.0"
 exo_ui_version="1.3.0"
+firebase_auth="11.0.2"
+firebase_auth_ui="9.0.0"
+facebook-sdk="14.1.0"
 
 
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -54,7 +59,13 @@ androidx-media3_exoplayer_dash ={group ="androidx.media3", name ="media3-exoplay
 androidx-media3_ui ={group ="androidx.media3", name ="media3-ui", version.ref = "exo_version"}
 androidx-media3_ui_compose ={group ="androidx.media3", name ="media3-ui-compose", version.ref = "exo_ui_version"}
 
+firebase_core ={group ="com.google.firebase", name ="firebase-core", version.ref = "firebase_auth"}
+firebase_auth-ui ={group ="com.firebaseui", name ="firebase-ui-auth", version.ref = "firebase_auth_ui"}
+firebase_auth ={group ="com.google.firebase", name ="firebase-auth", version.ref = "firebase_auth"}
+facebook-sdk ={group ="com.facebook.android", name ="facebook-android-sdk", version.ref = "facebook-sdk"}
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
