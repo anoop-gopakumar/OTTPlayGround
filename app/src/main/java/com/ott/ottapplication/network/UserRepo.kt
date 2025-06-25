@@ -8,7 +8,7 @@ class UserRepo {
      fun fetchUserData(){
 
         val apiInstance = ApiInstance()
-         apiInstance.retrofitAPI
+         //apiInstance.retrofitAPI
 
 
      }

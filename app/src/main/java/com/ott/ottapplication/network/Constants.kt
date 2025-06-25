@@ -3,7 +3,10 @@ package com.ott.ottapplication.network
 class Constants {
 
 
-    val USER_LIST : String = "/api/users?page=2";
+    companion object {
+        const val BASE_URL = "https://reqres.in/api/"
+        const val USER_LIST: String = "/api/users?page=2";
+    }
 
 
 }

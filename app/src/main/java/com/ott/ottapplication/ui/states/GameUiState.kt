@@ -1,4 +1,4 @@
-package com.example.ottapplication.ui.states
+package com.ott.ottapplication.ui.states
 
 data class GameUiState(val currentScrambledWord: String = "",
                        val currentWordCount: Int = 1,

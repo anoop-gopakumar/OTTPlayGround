@@ -74,6 +74,11 @@
             android:text="Skip Sign In"
             android:textColor="@android:color/holo_blue_dark" />
 
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/pg_bar"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
 
     </LinearLayout>
 

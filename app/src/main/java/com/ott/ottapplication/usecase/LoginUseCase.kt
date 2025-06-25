@@ -1,9 +1,11 @@
 package com.ott.ottapplication.usecase
 
+import com.ott.ottapplication.ui.dashboard.viewmodel.LoginStates
+
 interface LoginUseCase {
 
 
-    fun login(userName: String, password: String)
+    suspend fun login(userName: String, password: String) : LoginStates
 
 
 }
