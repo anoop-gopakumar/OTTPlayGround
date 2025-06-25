@@ -10,7 +10,7 @@ class StringHandler(private val context: Context) {
     }
 
     fun getText() : String{
-        return context.getString(R.string.title_dashboard)
+        return context.getString(R.string.title_sports)
     }
 
 }

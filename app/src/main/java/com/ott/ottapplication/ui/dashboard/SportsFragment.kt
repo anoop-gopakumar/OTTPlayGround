@@ -3,11 +3,11 @@ package com.ott.ottapplication.ui.dashboard
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
-import com.ott.ottapplication.databinding.FragmentDashboardBinding
+import com.ott.ottapplication.databinding.FragmentSportsBinding
 import com.ott.ottapplication.ui.BaseFragment
 
-class DashboardFragment :
-    BaseFragment<FragmentDashboardBinding>(FragmentDashboardBinding::inflate) {
+class SportsFragment :
+    BaseFragment<FragmentSportsBinding>(FragmentSportsBinding::inflate) {
 
     private var dashboardViewModel: DashboardViewModel? = null
 

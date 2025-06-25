@@ -1,4 +1,4 @@
-package com.example.ottapplication.ui.states
+package com.ott.ottapplication.ui.states
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

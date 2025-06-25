@@ -1,6 +1,6 @@
 package com.example.ottapplication
 
-import com.example.ottapplication.ui.states.GameViewModel
+import com.ott.ottapplication.ui.states.GameViewModel
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotEquals

@@ -3,9 +3,11 @@ package com.ott.ottapplication.ui.details
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
-import com.example.ottapplication.ui.states.GameViewModel
+import com.ott.ottapplication.ui.states.GameViewModel
 import com.ott.ottapplication.R
+import com.ott.ottapplication.models.Videos
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -17,6 +19,11 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_home)
+
+        val getContent = intent.getSerializableExtra("", )
+
+
+      //  bundleOf(Pair("videos", videos)),
         collectData()
     }
 

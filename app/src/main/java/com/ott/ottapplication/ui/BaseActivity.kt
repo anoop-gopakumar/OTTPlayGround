@@ -22,8 +22,7 @@ abstract class BaseActivity<T> : AppCompatActivity() {
 
     }
 
-
-    fun showSnackBar(message: String) {
+    fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 

@@ -12,14 +12,26 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.ott.ottapplication.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_search"
+        android:name="com.ott.ottapplication.ui.dashboard.SportsFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_spots"
+        android:name="com.ott.ottapplication.ui.dashboard.SportsFragment"
+        android:label="@string/title_sports"
+        tools:layout="@layout/fragment_sports" />
+
+    <fragment
+        android:id="@+id/navigation_downloads"
+        android:name="com.ott.ottapplication.ui.downloads.DownloadFragment"
+        android:label="@string/title_downloads"
+        tools:layout="@layout/fragment_sports" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
         android:name="com.ott.ottapplication.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_profile"
         tools:layout="@layout/fragment_notifications" />
 </navigation>
